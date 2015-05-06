@@ -353,7 +353,7 @@
   <PropertyGroup Condition=" '$(ProductSignAssembly)' == 'true' AND '$(Sign)' == 'Sign' ">
     <DefineConstants>$(DefineConstants);SIGNED</DefineConstants>
     <SignAssembly>true</SignAssembly>
-    <DelaySign>true</DelaySign>
+    <DelaySign>false</DelaySign>
     <AssemblyOriginatorKeyFile>..\35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
     <SignKeyId>72</SignKeyId>
   </PropertyGroup>
