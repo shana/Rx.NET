@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Rx-Linq</id>
+    <version>$version$</version>
+    <title>Reactive Extensions - Query Library</title>
+    <authors>Microsoft</authors>
+    <owners>Microsoft</owners>
+    <licenseUrl>http://go.microsoft.com/fwlink/?LinkID=261272</licenseUrl>
+    <projectUrl>http://go.microsoft.com/fwlink/?LinkId=261273</projectUrl>
+    <iconUrl>http://go.microsoft.com/fwlink/?LinkId=261274</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Reactive Extensions Query Library used to express complex event processing queries over observable sequences.</description>
+    <copyright>Copyright (C) Microsoft Corporation</copyright>
+    <language>en-US</language>
+    <tags>Rx Reactive Extensions Observable LINQ Events</tags>
+    <dependencies>
+      <dependency id="Rx-Interfaces" version="$version$" />
+      <dependency id="Rx-Core" version="$version$" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\..\Layout\Rx\Release45\System.Reactive.Linq.dll" target="lib\net45\" />
+    <file src="..\..\Layout\Rx\Release45\System.Reactive.Linq.XML" target="lib\net45\" />
+    <file src="..\..\Layout\Rx\ReleasePL\System.Reactive.Linq\System.Reactive.Linq.dll" target="lib\portable-net45+winrt45+wp8+wpa81\" />
+    <file src="..\..\Layout\Rx\ReleasePL\System.Reactive.Linq.XML" target="lib\portable-net45+winrt45+wp8+wpa81\" />
+  </files>
+</package>

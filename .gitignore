@@ -1,6 +1,7 @@
 Ix.NET/Layout
 Rx.NET/Layout
-
+Layout
+*.nupkg
 
 *.pydevproject
 .project

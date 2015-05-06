@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LayoutOutputFolder>$(MSBuildProjectDirectory)\..\..\Layout\Rx\</LayoutOutputFolder>
+    <SetupOutputFolder>$(MSBuildProjectDirectory)\..\..\Setup\Rx\</SetupOutputFolder>
+  </PropertyGroup>
+
+  <!-- Current platforms -->
+
+  <ItemGroup>
+    <Flavor Include="Rx.sln">
+      <Configuration>Release45</Configuration>
+    </Flavor>
+    <Flavor Include="Rx.sln">
+      <Configuration>ReleasePL</Configuration>
+    </Flavor>
+  </ItemGroup>
+
+  <Target Name="ExpandFlavors">
+    <CreateItem Include="@(Flavor)" AdditionalMetadata="Properties=Configuration=%(Flavor.Configuration)%3BPlatform=Any CPU%3BOutDir=$(LayoutOutputFolder)\%(Flavor.Configuration)\%3BSign=Sign">
+      <Output TaskParameter="Include" ItemName="ProjectToBuild" />
+    </CreateItem>
+  </Target>
+  <Target Name="Build" DependsOnTargets="ExpandFlavors">
+    <MSBuild Projects="@(ProjectToBuild)" Targets="Build" />
+    <MSBuild Projects="@(SetupToBuild)" Targets="Build" />
+  </Target>
+  <Target Name="Clean" DependsOnTargets="ExpandFlavors">
+    <MSBuild Projects="@(ProjectToBuild)" Targets="Clean" />
+    <MSBuild Projects="@(SetupToBuild)" Targets="Clean" />
+  </Target>
+  <Target Name="Rebuild" DependsOnTargets="ExpandFlavors">
+    <MSBuild Projects="@(ProjectToBuild)" Targets="Rebuild" />
+    <MSBuild Projects="@(SetupToBuild)" Targets="Rebuild" />
+  </Target>
+</Project>
